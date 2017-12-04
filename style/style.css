@@ -4,7 +4,8 @@
   font-size: 3.5rem;
   text-transform: uppercase;
   background-color: #2D3142;
-  color: #FFDF44;  
+  color: #FFDF44; 
+  width: 40vw;
 }
 .genTemp {
   font-size: 3rem;
