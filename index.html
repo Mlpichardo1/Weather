@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Atomic+Age" rel="stylesheet">
 	<link href="style/style.css" rel="stylesheet">
     <title>Weather App</title>
@@ -12,21 +13,22 @@
 <body>
     <div class="wrapper">
 		<div class="container-fluid">
-			<div class="title"> LOCAL WEATHER GETTER
+			<div class="title"> GET YOUR LOCAL WEATHER</div>
+<div id="forecast">
+<h1>Weather at <span id="location"> </span></h1>
+<div id="imgdiv">
+<img id="img" src=""/>
+</div>
+<p>It is currently <span id="temp"> </span>ªF with <span id="desc"> </span></p>
+<p>Wind: <span id="wind"></span></p>
+</div>
     </div>
-    <div class="temputure" id="genTemp">
-    </div>
-    </div>
-    
     
     </div>
     
 </body>
 
 
-
-
-
-    
-<script src="script.js"></script>
+<script src="server.js"></script>
+<script src="key.js"></script>
 </html>
