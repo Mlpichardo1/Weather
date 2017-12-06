@@ -5,6 +5,7 @@ $(document).ready(function() {
     var lat;
     var fTemp;
     var cTemp;
+    var tempSwap = true;
     if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(function(position) {
       long = position.coords.longitude;
@@ -24,11 +25,25 @@ $(document).ready(function() {
       var windSpeed = data.wind.speed;
       var city = data.name;
       
-      ftemp = (kelvin)*(9/5)-459.67;
+      fTemp = (kelvin)*(9/5)-459.67;
       cTemp = kelvin-273;
       
       $("#city").html(city);
       $("#weatherType").html(weatherType);
+      $("#fTemp").html(fTemp);
+      $("#windSpeed").html(windSpeed);
+      $("#fTemp").click(function(){
+          
+         if(tempSwap===false) {
+             $("#fTemp").html(cTemp);
+             tempSwap=true;
+         }
+         else {
+             $("#fTemp").html(fTemp);
+             tempSwap=false;
+         }
+         
+         });
     }
 });
       
