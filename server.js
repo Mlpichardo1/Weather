@@ -1,34 +1,38 @@
 /* global  Geo navigator APIKEY $*/
 
-var geo = {};
-if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(success,error);
-}
-else {
-    alert('Geolocation is not supported');
-}
-
-function error() {
-    alert("That's weird! We couldn't find you!");
-}
-
-function success(position) {
-    Geo.lat = position.coords.latitude;
-    Geo.lng = position.coords.longitude;
-}
-
-var key = APIKEY
-var Weather = "api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}"
-
-$.ajax({
-url : Weather,
-dataType : "Json",
-success : function(data) {
-// get all the information
-var location =data['location']['city'];
-var temp = data['current_observation']['temp_f'];
-var img = data['current_observation']['icon_url'];
-var desc = data['current_observation']['weather'];
-var wind = data['current_observation']['wind_string'];
-}
+$(document).ready(function() {
+    var long;
+    var lat;
+    var fTemp;
+    var cTemp;
+    if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(function(position) {
+      long = position.coords.longitude;
+      lat = position.coords.latitude;
+      
+    $("#data").html("latitude: " + lat + "<br>longitude: " + long);
+      
+      $.ajax({
+    method: 'GET',
+    dataType: "json",
+    url: "https://api.openweathermap.org/data/2.5/weather",
+    data: {lat:lat, lon:long, appid:APIKEY},
+    success: function(data) {
+        console.log(data)
+      var weatherType = data.weather[0].description;
+      var kelvin = data.main.temp; 
+      var windSpeed = data.wind.speed;
+      var city = data.name;
+      
+      ftemp = (kelvin)*(9/5)-459.67;
+      cTemp = kelvin-273;
+      
+      $("#city").html(city);
+      $("#weatherType").html(weatherType);
+    }
 });
+      
+  });
+}
+
+})

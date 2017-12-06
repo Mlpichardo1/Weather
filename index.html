@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Atomic+Age" rel="stylesheet">
 	<link href="style/style.css" rel="stylesheet">
     <title>Weather App</title>
@@ -15,12 +15,15 @@
 		<div class="container-fluid">
 			<div class="title"> GET YOUR LOCAL WEATHER</div>
 <div id="forecast">
-<h1>Weather at <span id="location"> </span></h1>
+<h1>Weather at <span id="city"> </span></h1>
 <div id="imgdiv">
 <img id="img" src=""/>
 </div>
-<p>It is currently <span id="temp"> </span>ªF with <span id="desc"> </span></p>
-<p>Wind: <span id="wind"></span></p>
+<p>It is currently <span id="api"> </span>ªF with <span id="displayBox"> </span></p>
+<p>Weather Type: <span id="weatherType"></span></p>
+<p id="data">
+</p>
+<button class="btn" id="getWeather">GET TEMP</button>
 </div>
     </div>
     
@@ -28,7 +31,9 @@
     
 </body>
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 <script src="server.js"></script>
 <script src="key.js"></script>
 </html>
