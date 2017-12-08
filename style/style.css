@@ -1,16 +1,20 @@
-.title {
+h1 {
   font-family: 'Atomic Age', cursive;
   font-weight: bold;
   font-size: 3.5rem;
   text-transform: uppercase;
   background-color: #2D3142;
-  color: #FFDF44; 
-  width: 40vw;
+  width: 100vw;
   text-align: center;
-}
-h1{
   color: white;
 }
+
+h2{
+  font-size: 3rem;
+  text-align: center;
+  color: white;
+}
+
 p {
   color: white;
 }
@@ -18,7 +22,7 @@ p {
   font-size: 3rem;
 }
 
-.wrapper {
+body {
   height: 100vh;
   width: 100vw;
   position: relative;
@@ -26,6 +30,5 @@ p {
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
-  background-image: url("https://images.unsplash.com/photo-1485809069980-bdd865d520ae?auto=format&fit=crop&w=1350&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D");
   background-color: #EF8354;
 }
