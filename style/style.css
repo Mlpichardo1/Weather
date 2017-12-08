@@ -1,5 +1,5 @@
 h1 {
-  font-family: 'Atomic Age', cursive;
+  font-family: 'Bungee', cursive;
   font-weight: bold;
   font-size: 3.5rem;
   text-transform: uppercase;
@@ -13,6 +13,13 @@ h2{
   font-size: 3rem;
   text-align: center;
   color: white;
+}
+
+.container-fluid {
+  border-radius: 50px;
+  padding: 20px;
+  width: 30vw;
+  background-color: #8B2635;
 }
 
 p {
