@@ -1,4 +1,4 @@
-/* global  Geo navigator APIKEY skyAPI $*/
+/* global navigator APIKEY $*/
 $(document).ready(function() {
 	var long;
 	var lat;
@@ -25,7 +25,7 @@ $(document).ready(function() {
 					var windSpeed = data.wind.speed;
 					var city = data.name;
 					var icon = data.weather[0].icon;
-					var iconUrl = "http://openweathermap.org/img/w/" + icon + ".png";
+					var iconUrl = "https://openweathermap.org/img/w/" + icon + ".png";
 					fTemp = ((kelvin) * (9 / 5) - 459.67).toFixed(1);
 					cTemp = (kelvin - 273).toFixed(1);
 					$("#city").html(city);
@@ -33,7 +33,7 @@ $(document).ready(function() {
 					$("#fTemp").html(fTemp + " &#x2109;");
 					windSpeed = (2.237 * (windSpeed)).toFixed(1);
 					$("#windSpeed").html(windSpeed + " mph");
-					$("#iconCode").html("<img src='" + iconUrl  + "'>");
+					$("#iconCode").html("<img src='" + iconUrl + "'>");
 					$("#fTemp").click(function() {
 						if (tempSwap === false) {
 							$("#fTemp").html(fTemp + " &#x2109;");
@@ -43,39 +43,16 @@ $(document).ready(function() {
 							tempSwap = false;
 						}
 					});
-					
-					function getWeatherData(lat, long){
-     var apiKey = skyAPI;
-     var exclude = "?exclude=minutely,hourly,daily,alerts,flags";
-     var unit = "?units=si";
-     var url = "https://api.darksky.net/forecast/" + apiKey + "/" + lat + "," + long + exclude + unit;
-     
-    //get darksky api data
-    $.ajax({
-      url: url,
-      dataType: "jsonp",
-      success: function (weatherData) { 
-        //icon information (explained after)
-        var icon = weatherData.currently.icon;
-        //weather description
-        var description = weatherData.currently.summary;
-        //change background image
-        //temperature
-        var temperature = weatherData.currently.temperature;
-        $("#iconCode").html(weatherType);
-      }
-    });
-  }
 					if (fTemp > 80) {
-						$('body').css('background-image','url(https://images.unsplash.com/photo-1474777044674-fd10bad21542?auto=format&fit=crop&w=1351&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D)');
+						$('body').css('background-image', 'url(https://images.unsplash.com/photo-1474777044674-fd10bad21542?auto=format&fit=crop&w=1351&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D)');
 					} else if (fTemp > 70) {
-						$('body').css('background-image','url(https://images.unsplash.com/photo-1480498073050-4c6abeee90c1?auto=format&fit=crop&w=1352&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D)');
+						$('body').css('background-image', 'url(https://images.unsplash.com/photo-1480498073050-4c6abeee90c1?auto=format&fit=crop&w=1352&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D)');
 					} else if (fTemp > 55) {
-						$('body').css('background-image','url(https://images.unsplash.com/photo-1445855743215-296f71d4b49c?auto=format&fit=crop&w=1350&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D)');
+						$('body').css('background-image', 'url(https://images.unsplash.com/photo-1445855743215-296f71d4b49c?auto=format&fit=crop&w=1350&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D)');
 					} else if (fTemp > 35) {
-						$('body').css('background-image','url(https://images.unsplash.com/photo-1483694583352-6af4091a9498?auto=format&fit=crop&w=1350&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D)');
+						$('body').css('background-image', 'url(https://images.unsplash.com/photo-1483694583352-6af4091a9498?auto=format&fit=crop&w=1350&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D)');
 					} else {
-						$('body').css('background-image','url(https://images.unsplash.com/photo-1477601263568-180e2c6d046e?auto=format&fit=crop&w=1350&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D)');
+						$('body').css('background-image', 'url(https://images.unsplash.com/photo-1477601263568-180e2c6d046e?auto=format&fit=crop&w=1350&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D)');
 					}
 				}
 			});
