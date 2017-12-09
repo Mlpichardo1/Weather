@@ -1,41 +1,44 @@
 h1 {
-  font-family: 'Bungee', cursive;
-  font-weight: bold;
-  font-size: 3.5rem;
-  text-transform: uppercase;
-  background-color: #2D3142;
-  width: 100vw;
-  text-align: center;
-  color: white;
+	font-family: 'Bungee', cursive;
+	font-weight: bold;
+	font-size: 3.5rem;
+	text-transform: uppercase;
+	background-color: #2D3142;
+	width: 100vw;
+	text-align: center;
+	color: white;
 }
-
-h2{
-  font-size: 3rem;
-  text-align: center;
-  color: white;
+h2 {
+	font-size: 3.5rem;
+	text-align: center;
+	color: white;
 }
-
 .container-fluid {
-  border-radius: 50px;
-  padding: 20px;
-  width: 30vw;
-  background-color: #8B2635;
+	font-family: 'Exo 2', sans-serif, bold;
+	border-radius: 50px;
+	padding: 20px;
+	width: 33vw;
+	background-color: rgba(60, 79, 118, .3);
+}
+#fTemp {
+	font-size: 5rem;
+	padding: 10px;
+	margin: 15px;
+	width: 13vw;
+	background-color: rgba(60, 79, 118, .3);
 }
 
 p {
-  color: white;
+	font-size: 2rem;
+	color: white;
 }
-.genTemp {
-  font-size: 3rem;
-}
-
 body {
-  height: 100vh;
-  width: 100vw;
-  position: relative;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  background-color: #EF8354;
+	height: 100vh;
+	width: 100vw;
+	position: relative;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
+	background-color: #EF8354;
 }
