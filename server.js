@@ -25,6 +25,7 @@ $(document).ready(function() {
 					var windSpeed = data.wind.speed;
 					var city = data.name;
 					var icon = data.weather[0].icon;
+					var id = data.weather[0].id;
 					var iconUrl = "https://openweathermap.org/img/w/" + icon + ".png";
 					fTemp = ((kelvin) * (9 / 5) - 459.67).toFixed(1);
 					cTemp = (kelvin - 273).toFixed(1);
@@ -33,7 +34,8 @@ $(document).ready(function() {
 					$("#fTemp").html(fTemp + " &#x2109;");
 					windSpeed = (2.237 * (windSpeed)).toFixed(1);
 					$("#windSpeed").html(windSpeed + " mph");
-					$("#iconCode").html("<img src='" + iconUrl + "'>");
+					$("#iconCode").html('<i class="wi wi-owm-' + id + '"></i>');
+					// $("#iconCode").html("<img src='" + iconUrl + "'>");
 					$("#fTemp").click(function() {
 						if (tempSwap === false) {
 							$("#fTemp").html(fTemp + " &#x2109;");
