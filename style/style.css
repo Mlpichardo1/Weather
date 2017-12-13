@@ -20,6 +20,10 @@ h2 {
 	width: 30vw;
 	background-color: rgba(60, 79, 118, .3);
 }
+#iconCode {
+font-size: 7rem;	
+}
+
 #fTemp {
 	font-size: 4.5rem;
 	padding: 10px;
